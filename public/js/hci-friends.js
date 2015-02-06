@@ -1,16 +1,22 @@
 'use strict';
 
 // Call this function when the page loads (the "ready" event)
-$(document).ready(function() {
-	initializePage();
-})
+
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$('.friendid').click(function(e){
+		var idname = $(this).text();
+		$(this).text(anagrammedName(idname)); 
+		e.preventDefault();
+	});
 }
+$(document).ready(function() {
+	initializePage();
+})
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
